@@ -32,7 +32,7 @@ public class PontoController {
 	private static Logger log = LoggerFactory.getLogger(PontoController.class);
 
 	@PutMapping(value = { "/inserir" })
-	public @ResponseBody ResponseEntity<Ponto> inserir(@RequestParam(name = "data", required = false) String data,
+	public @ResponseBody ResponseEntity<String> inserir(@RequestParam(name = "data", required = false) String data,
 			@RequestParam(name = "hora", required = false) String hora,
 			@RequestParam(name = "periodo", required = false) PeriodoEnum periodoEnum) {
 
@@ -41,9 +41,9 @@ public class PontoController {
 
 		} catch (Exception e) {
 			log.error(e.getMessage());
-			return new ResponseEntity<Ponto>(HttpStatus.BAD_GATEWAY);
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_GATEWAY);
 		}
-		return new ResponseEntity<Ponto>(HttpStatus.CREATED);
+		return new ResponseEntity<String>("Anotação de ponto inserido com sucesso", HttpStatus.CREATED);
 	}
 
 	@GetMapping(value = { "/listar" })
@@ -71,9 +71,9 @@ public class PontoController {
 
 		} catch (Exception e) {
 			log.error(e.getMessage());
-			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+			return new ResponseEntity<>(e.getMessage() ,HttpStatus.BAD_GATEWAY);
 		}
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>("Registro de ponto alterado com sucesso.", HttpStatus.OK);
 	}
 
 	@DeleteMapping(value = { "/deletar/{id}" })
@@ -85,6 +85,6 @@ public class PontoController {
 			log.error(e.getMessage());
 			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 		}
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>("Registro de ponto excluído com sucesso",HttpStatus.OK);
 	}
 }
