@@ -1,5 +1,5 @@
 # spring-rest-api
-CRUD REST API Service with Spring Boot, JPA and Hibernate
+CRUD REST API Service with Spring Boot, JPA and Hibernate com banco H2
 
 Para acessar o swagger e testar as API's, acesse:
 http://localhost:8080/swagger-ui.html
