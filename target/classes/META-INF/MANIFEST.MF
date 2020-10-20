@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: prova-backend
+Implementation-Version: 1.0
+Built-By: ranyel
+Implementation-Vendor-Id: br.leg.camara
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/prova-backend
+Created-By: Maven Integration for Eclipse
+
